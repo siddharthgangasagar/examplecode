@@ -1,23 +1,10 @@
-import { NgModule } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component'; // ✅ Standalone component
-import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './pages/login/login.component';
-
-@NgModule({
-  declarations: [
-     // ✅ Regular component declared here
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    AppComponent // ✅ Standalone component imported here
-  ],
-  providers: [],
-  bootstrap: [] // ✅ Bootstrap the standalone root component
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterModule],
+  template: `<router-outlet></router-outlet>`
 })
-export class AppModule { }
+export class AppComponent {}
